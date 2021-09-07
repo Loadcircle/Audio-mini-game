@@ -1,3 +1,5 @@
+import { playGraph } from "./helpers/generateAudioGraph.js";
+
 const getJsonFile = async()=>{
     const request = await fetch('http://localhost:8080/api/saveJson/');
     return await request.json();
@@ -22,7 +24,7 @@ const main = async ()=>{
             startGame(file);
             audio.pause();
             setTimeout(()=>{
-                audio.play();
+                playGraph(audio);
             }, 3000);
             started = true;
         }
