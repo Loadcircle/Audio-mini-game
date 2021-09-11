@@ -7,8 +7,7 @@ const audioPath = './assets/sound.ogg';
 
 const gccol1 = document.getElementById('gccol1'),
     gccol2 = document.getElementById('gccol2'),
-    gccol3 = document.getElementById('gccol3'),
-    gccol4 = document.getElementById('gccol4');
+    gccol3 = document.getElementById('gccol3');
 
 const audio = document.getElementById('audio');
 
@@ -52,10 +51,6 @@ const startGame = (data)=>{
                 case 2:
                     gccol3.appendChild(box);                
                     break;
-
-                case 3:
-                    gccol4.appendChild(box);                
-                    break;
             
                 default:
                     break;
@@ -70,20 +65,17 @@ const startGame = (data)=>{
 }
 
 window.addEventListener('keypress', (e)=>{
-    if(e.key == 'a'){
+    const validKeys = ['a', 's', 'd'];
+    if(e.key == validKeys[0]){
         const btn = document.querySelector('#gccol1 .music_btn.set');
         clickMusicBtn(btn);
     }
-    if(e.key == 's'){
+    if(e.key == validKeys[1]){
         const btn = document.querySelector('#gccol2 .music_btn.set');
         clickMusicBtn(btn);
     }
-    if(e.key == 'k'){
+    if(e.key == validKeys[2]){
         const btn = document.querySelector('#gccol3 .music_btn.set');
-        clickMusicBtn(btn);
-    }
-    if(e.key == 'l'){
-        const btn = document.querySelector('#gccol4 .music_btn.set');
         clickMusicBtn(btn);
     }
 });

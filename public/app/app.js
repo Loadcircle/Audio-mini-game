@@ -17,7 +17,7 @@ let analyser;
 container.addEventListener('click', ()=>{
     const audio1 = document.getElementById('audio1');
 
-    const audioPath = './assets/sound.ogg';
+    const audioPath = './assets/spell.ogg';
     audio1.src = audioPath;
     // audio1.src = `data:audio/ogg;base64,${audio}`;
     const audioCtx = new AudioContext();

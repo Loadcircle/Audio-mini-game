@@ -35,7 +35,7 @@ body{
     overflow: hidden;
 }
 .game_container > .game_column{
-    width: 25%;
+    width: 33%;
     border: solid .5px;
     height: 600px;
     position: relative;
