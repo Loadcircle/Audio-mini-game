@@ -5,7 +5,7 @@ export const audioDataETL = (data)=>{
         e.buffer = getBuffer(e.buffer);
         return e;
     });
-
+    
     const lastSecond = Math.floor(data[data.length-1].time);
 
     for(let i = 0; i <= lastSecond; i++){
@@ -60,6 +60,22 @@ const getBuffer = (buffer)=>{
 
     return [max1, max2, max3, max4]
 }
+
+const getBufferbk = (buffer, sectionsNumber = 4)=>{
+    let count = 0;
+  
+    const sections = [...Array(sectionsNumber)].map(() => (
+      [...Array(4)].map(() => {
+        const buff = buffer[count];
+        count += 1;
+        return buff;
+      })
+    ));
+  
+    const maxs = sections.map((max) => Math.max(...max));
+  
+    return maxs;
+  };
 
 const getTopBufferFromColumn = (array, position)=>{
     const col = array.map(e=>{

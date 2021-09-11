@@ -33,7 +33,7 @@ export const playGraph = (audio, sendData = false)=>{
     let animationFrameID;
 
     const audioData = {
-        time: audio1.currentTime,
+        time: audio.currentTime,
         buffer:[]
     }
 
