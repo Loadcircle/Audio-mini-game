@@ -35,7 +35,6 @@ const startGame = (data)=>{
         box.classList = 'music_btn set';
         box.setAttribute('data-time', e.time);
         
-        
         const delay = ((e.time*1000));
         
         setTimeout(()=>{
@@ -88,7 +87,7 @@ const clickMusicBtn = (btn)=>{
     let score = '';
 
     const calc = btnTime - audio.currentTime;
-    console.log(calc)
+    
     if(calc < 0.55){
         score='perfect';
     }
