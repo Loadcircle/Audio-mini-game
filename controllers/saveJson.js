@@ -17,8 +17,10 @@ const saveJson = async (req, res)=>{
 }
 
 const getJson = (req, res)=>{
+
+    const fileName = "magic.json"
     
-    const pathFile = path.join(__dirname, '../jsonFiles/example.json');
+    const pathFile = path.join(__dirname, '../jsonFiles/'+fileName);
     if(fs.existsSync(pathFile)){
         return res.sendFile(pathFile)
     }
