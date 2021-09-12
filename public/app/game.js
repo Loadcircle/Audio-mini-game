@@ -34,6 +34,7 @@ const startGame = (data)=>{
         const box = document.createElement('div');
         box.classList = 'music_btn set';
         box.setAttribute('data-time', e.time);
+        box.onclick = ()=>{clickMusicBtn(box)};
         
         const delay = ((e.time*1000));
         
