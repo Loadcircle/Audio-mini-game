@@ -22,7 +22,7 @@ export const audioDataETL = (data)=>{
     };
 
     //order data by time before returning
-    return transformedData.sort((a, b) => (a.time > b.time) ? 1 : -1);;
+    return transformedData.filter(e=>e.time >= 3).sort((a, b) => (a.time > b.time) ? 1 : -1);;
 }
 
 const getBuffer = (buffer, sectionsNumber = 4)=>{

@@ -17,7 +17,7 @@ let analyser;
 container.addEventListener('click', ()=>{
     const audio1 = document.getElementById('audio1');
 
-    const audioPath = './assets/spell.ogg';
+    const audioPath = './assets/sound.ogg';
     audio1.src = audioPath;
     // audio1.src = `data:audio/ogg;base64,${audio}`;
     const audioCtx = new AudioContext();
@@ -77,7 +77,6 @@ const sendData = (json, name = 'example')=>{
         fileName: name,
         data: audioDataETL(json),
     }
-    console.log(data);
 
     fetch('/api/saveJson/', {
         method: 'POST',

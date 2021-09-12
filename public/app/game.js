@@ -1,5 +1,5 @@
 const getJsonFile = async()=>{
-    const request = await fetch('http://localhost:8080/api/saveJson/');
+    const request = await fetch('/api/saveJson/');
     return await request.json();
 };
 const audioPath = './assets/sound.ogg';
@@ -97,7 +97,6 @@ const clickMusicBtn = (btn)=>{
     }
     else{
         score='fail';
-
     }
     btn.classList.add(score);
 
