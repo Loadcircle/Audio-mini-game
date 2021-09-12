@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors');
+require('dotenv').config();
 
 class Server{
     constructor(){
         this.app = express();
-        this.port = 8080;
+        this.port = process.env.PORT;
 
         this.paths = {
             saveJson: '/api/saveJson'
