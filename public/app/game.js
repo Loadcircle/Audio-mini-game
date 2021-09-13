@@ -15,16 +15,9 @@ const main = async ()=>{
     const file = await getJsonFile();
     audio.src = audioPath;
 
-    let started = false;
     audio.addEventListener('play', ()=>{
-        if(!started){
-            startGame(file);
-            audio.pause();
-            setTimeout(()=>{
-                audio.play();
-            }, 3000);
-            started = true;
-        }
+        startGame(file);
+        audio.play();
     });
 
 };
@@ -36,7 +29,7 @@ const startGame = (data)=>{
         box.setAttribute('data-time', e.time);
         box.onclick = ()=>{clickMusicBtn(box)};
         
-        const delay = ((e.time*1000));
+        const delay = ((e.time*1000)-2300);
         
         setTimeout(()=>{
             switch (e.position) {
@@ -85,6 +78,7 @@ const clickMusicBtn = (btn)=>{
     btn.classList.add('active');
 
     const btnTime = Number(btn.dataset.time);
+    console.log(`btn time: ${btnTime} \n audio current time: ${audio.currentTime}`)
     let score = '';
 
     const calc = btnTime - audio.currentTime;
